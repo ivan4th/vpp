@@ -110,6 +110,7 @@ upf_flow_process (vlib_main_t * vm, vlib_node_runtime_t * node,
     {
       vlib_get_next_frame (vm, node, next_index, to_next, n_left_to_next);
 
+#if 0
       /* Dual loop */
       while (n_left_from >= 4 && n_left_to_next >= 2)
 	{
@@ -236,6 +237,7 @@ upf_flow_process (vlib_main_t * vm, vlib_node_runtime_t * node,
 					   n_left_to_next, bi0, bi1, next0,
 					   next1);
 	}
+#endif
 
       /* Single loop */
       while (n_left_from > 0 && n_left_to_next > 0)
